@@ -22,8 +22,8 @@ public class MiHashMap
      * Asocia el valor especificado con la clave especificada. 
      * Si la clave existía, entonces sobreescribe su valor y 
      * devuelve el valor antiguo. Si no existía devuelve -1.
-     * @param clave La clave.
-     * @param valor El valor.
+     * @param clave La clave a introducir.
+     * @param valor El valor a introducir.
      * @return el valor antiguo.
      */
     public int put(String clave, int valor) {        
@@ -59,5 +59,17 @@ public class MiHashMap
         return valorAntiguo;        
     }
     
+    /**
+     * Devuelve el valor asociado con la clave especificada 
+     * o -1 en caso de que la clave no exista. 
+     * @param clave La clave a introducir.
+     */
+    public int get(String clave) {
+        int valor = -1;
+        if (claves.contains(clave)) {
+            valor = valores[claves.indexOf(clave)];
+        }
+        return valor;
+    } 
    
 }

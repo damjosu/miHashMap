@@ -86,4 +86,36 @@ public class MiHashMap
     public int size() {
         return claves.size();
     }
+    
+    /**
+     * Elimina del mapa el elemento con la clave dada y devuelve su valor.
+     * Si no hay esa clave en el mapa devuelve -1.
+     * @param clave La clave a introducir.
+     * @return valor El valor a devolver.
+     */
+    public int remove(String clave) {
+        int valor = -1;
+        int temp[];
+        int i = 0;
+        int cont = 0;
+        boolean existe = false;
+        while ((i < claves.size()) && !(existe)) {
+            if (clave == claves.get(i)) {
+                valor = valores[i];
+                claves.remove(i);
+                temp = new int[valores.length - 1];                
+                for (; cont < i; cont++) {
+                    temp[cont] = valores[cont];
+                }                
+                for (; cont < temp.length; cont++) {
+                    temp[cont] = valores[cont + 1];
+                }                
+                valores = temp;
+                existe = true;
+            }
+            i++;            
+        } 
+        return valor;
+    }
+    
 }

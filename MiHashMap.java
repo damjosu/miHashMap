@@ -63,6 +63,7 @@ public class MiHashMap
      * Devuelve el valor asociado con la clave especificada 
      * o -1 en caso de que la clave no exista. 
      * @param clave La clave a introducir.
+     * @return el valor.
      */
     public int get(String clave) {
         int valor = -1;
@@ -72,4 +73,10 @@ public class MiHashMap
         return valor;
     } 
    
+    /**
+     * Devuelve true si el mapa no contiene elementos. 
+     */
+    public boolean isEmpty() {
+        return ((claves.size() == 0) && (valores.length == 0));
+    }
 }

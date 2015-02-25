@@ -142,4 +142,19 @@ public class MiHashMap
         return existe;
     }
     
+    /**
+     * Devuelve true si el mapa contiene el valor dado.
+     * @param valor El valor a introducir.
+     */
+    public boolean containsValue(int valor) {
+        boolean existe = false;
+        int i = 0;
+        while ((i < valores.length) && !(existe)) {
+            if (valor == valores[i]) {
+                existe = true;
+            }
+            i++;
+        }
+        return existe;
+    }
 }

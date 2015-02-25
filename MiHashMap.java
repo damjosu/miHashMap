@@ -126,4 +126,20 @@ public class MiHashMap
         valores = new int[0];
     }
     
+    /**
+     * Devuelve true si el mapa contiene la clave dada.
+     * @param clave La clave a introducir.
+     */
+    public boolean containsKey(String clave) {
+        boolean existe = false;
+        int i = 0;
+        while ((i < claves.size()) && !(existe)) {
+            if (clave == claves.get(i)) {
+                existe = true;
+            }
+            i++;
+        }
+        return existe;
+    }
+    
 }

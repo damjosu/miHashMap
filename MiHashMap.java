@@ -118,4 +118,12 @@ public class MiHashMap
         return valor;
     }
     
+    /**
+     * Vacía el mapa.
+     */
+    public void clear() {
+        claves.clear();
+        valores = new int[0];
+    }
+    
 }
